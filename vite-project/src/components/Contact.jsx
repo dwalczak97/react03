@@ -1,11 +1,11 @@
- import { Formik } from 'formik';
 
-const Contact = () =>{
+const Contact = (props) =>{
     return (
         <div>
-<Formik>
-    
-</Formik>
+<p>{props.name}</p>
+<p>{props.numver}</p>
+<button>Delete</button>
+
         </div>
     )
 };
