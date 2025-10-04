@@ -16,13 +16,14 @@ const initialUsers= [
 function App() {
 const [users, setUsers] = useState(initialUsers)
 const deleteUser = (id) => {
+console.log("delete", id)
 setUsers((prev) => prev.filter((user) => user.id !== id));
 };
   return (
     <>
 <div>
   <h1>Phonebook</h1>
-  <ContactForm />
+  {/* <ContactForm /> */}
   <SearchBox />
   <ContactList users={users} deleteUser={deleteUser}/>
 </div>

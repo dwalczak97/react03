@@ -1,9 +1,10 @@
 const SearchBox = () => {
 return(
-    <>
-    <input>
-    </input>
-    </>
+ <form>
+    <label> Find contacts by name
+        <input type="text"/>
+    </label>
+ </form>
 )
 };
 

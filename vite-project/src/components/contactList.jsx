@@ -5,8 +5,8 @@ return (
   <>
  {users.map(user => (
 <Contact key={user.id}
-         name={user.name}
-         number={user.number}/>
+        name={user.name}
+        number={user.number}/>
         ))}
 
 </>
