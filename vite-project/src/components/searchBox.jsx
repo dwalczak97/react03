@@ -1,8 +1,8 @@
-const SearchBox = () => {
+const SearchBox = ({value, handleFilterChange}) => {
 return(
  <form>
     <label> Find contacts by name
-        <input type="text"/>
+        <input type="text" value={value} onChange={handleFilterChange}/>
     </label>
  </form>
 )

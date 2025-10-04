@@ -14,18 +14,29 @@ const initialUsers= [
 ];
 
 function App() {
-const [users, setUsers] = useState(initialUsers)
+const [users, setUsers] = useState(initialUsers);
+const [filter, setFilter] = useState("");
+
 const deleteUser = (id) => {
-console.log("delete", id)
 setUsers((prev) => prev.filter((user) => user.id !== id));
 };
+
+const handleFilterChange = (e) => {
+  setFilter(e.target.value)
+}
+
+const visibleUser = users.filter((user) =>
+user.name.toLocaleLowerCase().includes(filter.toLocaleLowerCase())
+)
+
   return (
     <>
 <div>
   <h1>Phonebook</h1>
   {/* <ContactForm /> */}
-  <SearchBox />
-  <ContactList users={users} deleteUser={deleteUser}/>
+  <SearchBox handleFilterChange={handleFilterChange} value={filter}/>
+  
+  <ContactList users={visibleUser} deleteUser={deleteUser}/>
 </div>
 
     </>
