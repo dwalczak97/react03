@@ -6,7 +6,7 @@ const Contact = ({name, number, id, deleteUser}) =>{
 <p>{name}</p>
 <p>{number}</p>
 
-<button onClick={()=>deleteUser(id)}>Delete</button>
+<button onClick={() => deleteUser(id)}>Delete</button>
 
         </div>
     )
