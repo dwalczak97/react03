@@ -1,10 +1,12 @@
 
-const Contact = (props) =>{
+const Contact = ({props, deleteUser}) =>{
     return (
         <div>
+          
 <p>{props.name}</p>
-<p>{props.numver}</p>
-<button>Delete</button>
+<p>{props.number}</p>
+
+<button onClick={deleteUser}>Delete</button>
 
         </div>
     )

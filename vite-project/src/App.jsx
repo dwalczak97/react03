@@ -1,8 +1,12 @@
- import { Formik } from 'formik';
-// import * as yup from 'yup';
+ import { Formik } from 'formik'
+// import * as yup from 'yup'
 import './App.css'
+import { useState } from "react"
+import  ContactList  from './components/contactList.jsx'
+import SearchBox from './components/searchBox.jsx'
 
-const initialValue = [
+
+const initialUsers= [
   {id: 'id-1', name: 'Rosie Simpson', number: '459-12-56'},
   {id: 'id-2', name: 'Hermione Kline', number: '443-89-12'},
   {id: 'id-3', name: 'Eden Clements', number: '645-17-79'},
@@ -10,14 +14,17 @@ const initialValue = [
 ];
 
 function App() {
-
+const [users, setUsers] = useState(initialUsers)
+const deleteUser = (id) => {
+setUsers((prev) => prev.filter((user) => user.id !== id));
+};
   return (
     <>
 <div>
   <h1>Phonebook</h1>
-  {/* <ContactForm />
-  <SearchBox /> */}
-  <ContactList initialValue={initialValue} />
+  <ContactForm />
+  <SearchBox />
+  <ContactList users={users} deleteUser={deleteUser}/>
 </div>
 
     </>
