@@ -33,11 +33,16 @@ const visibleUser = users.filter((user) =>
 user.name.toLocaleLowerCase().includes(filter.toLocaleLowerCase())
 )
 
+const addContact = newContact => {
+  setUsers(prev=>[...prev, newContact])
+
+}
+
   return (
     <>
 <div>
   <h1>Phonebook</h1>
-  <ContactForm />
+  <ContactForm addContact={addContact}/>
   <SearchBox handleFilterChange={handleFilterChange} value={filter}/>
   
   <ContactList users={visibleUser} deleteUser={deleteUser}/>
