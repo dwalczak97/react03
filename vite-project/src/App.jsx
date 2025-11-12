@@ -4,7 +4,8 @@ import './App.css'
 import { useState } from "react"
 import  ContactList  from './components/contactList.jsx'
 import SearchBox from './components/searchBox.jsx'
-import { formik } from "formik";
+import ContactForm from './components/contactForm.jsx'
+
 import * as Yup from "yup";
 
 
@@ -36,7 +37,7 @@ user.name.toLocaleLowerCase().includes(filter.toLocaleLowerCase())
     <>
 <div>
   <h1>Phonebook</h1>
-  {/* <ContactForm /> */}
+  <ContactForm />
   <SearchBox handleFilterChange={handleFilterChange} value={filter}/>
   
   <ContactList users={visibleUser} deleteUser={deleteUser}/>
